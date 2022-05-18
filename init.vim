@@ -24,6 +24,14 @@ Plug 'dracula/vim'
 Plug 'sickill/vim-monokai'
 "themes end
 
+"Fuzzy-Finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+"Tagbar
+Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
+Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
+
 call plug#end()
 set encoding=UTF-8
 
@@ -40,7 +48,6 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
-
 " Themes
 set termguicolors
 color gruvbox
@@ -51,11 +58,9 @@ nnoremap <c-t> <Esc>:NERDTreeToggle<cr>
 nnoremap <c-f> <Esc>:NERDTreeFocus<cr>
 nnoremap <c-n> <Esc>:NERDTree<cr>
 " nnoremap <c-l> <Esc>:call CocActionAsync('jumpDefinition')<cr>
-
-
-
-
 nmap <F8> :TagbarToggle<CR>
+
+nnoremap <c-p> :Files <cr>
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 
